@@ -1,0 +1,480 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* ----------- HEADER ----------- */
+
+header {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: inherit;
+}
+
+.navBar {
+  display: flex;
+  position: relative;
+  width: 90%;
+  margin: 10px 65px 10px 65px;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 3;
+}
+
+logo {
+  align-self: center;
+  justify-self: flex-start;
+}
+
+logo > a > i {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  border-radius: 50%;
+}
+
+.navBar > ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.navBar > ul > li {
+  list-style-type: none;
+  align-self: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: transform 0.2s;
+}
+
+.navBar > ul > li:hover {
+  transform: scale(1.05);
+}
+
+.headerBackground {
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  left: 0;
+  top: 0;
+}
+
+.headerUnderlay {
+  background: linear-gradient(#1aeb7a, #40644f);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 90vh;
+}
+
+.headerImage {
+  background: url(./imgs/BookBanner.webp) fixed no-repeat;
+  opacity: 0.45;
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+  object-fit: cover;
+}
+
+.headerBackground > h1 {
+  position: absolute;
+  z-index: 3;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+  transition: top 0.8s;
+}
+
+.headerButton {
+  background-color: rgba(255, 255, 255, 0);
+  border: 0.5px solid white;
+  font-size: 2rem;
+  position: absolute;
+  border-radius: 2rem;
+  bottom: 30%;
+  left: 43%;
+  padding: 8px 25px;
+  /* border-radius: 2rem; */
+  color: white;
+  font-weight: 400;
+  transition: background-color 0.3s, color 0.4s, bottom 0.8s;
+}
+
+.headerButton:hover {
+  color: #00023f;
+  background-color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1280px) {
+  .headerBackground > h1 {
+    font-size: 3.8rem;
+  }
+
+  .headerButton {
+    padding: 4px 20px;
+  }
+}
+
+/* ---------- SECTION 2 ----------- */
+
+.Section--2 {
+  width: 100vw;
+  height: 80vh;
+}
+
+.Section2-Text {
+  display: inline-block;
+  position: relative;
+  width: 35%;
+  left: 15%;
+  top: 15%;
+  margin-bottom: 15px;
+}
+
+.Section2-Text > h2 {
+  font-size: 2rem;
+}
+
+.Section2-Text > p {
+  margin-top: 20px;
+  font-weight: 100;
+  font-size: 1.2rem;
+  line-height: 30px;
+}
+
+.Section2-Img {
+  display: inline-block;
+  position: relative;
+  width: 25%;
+  height: 62%;
+  left: 33%;
+  top: 15%;
+}
+
+.Section2-Img > img {
+  position: absolute;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.underlay {
+  position: absolute;
+  transform: translate(40%, 70%);
+  border-radius: 100%;
+  background-color: #cce0f3;
+  height: 150px;
+  width: 150px;
+  z-index: -2;
+  transition: transform 0.3s ease-in;
+}
+
+.book {
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.book--1 {
+  transform: translateX(5%) rotate(5deg);
+}
+
+.book--2 {
+  transform: translateX(3%) rotate(2.5deg);
+}
+
+.book--3 {
+  transform: rotate(1deg);
+}
+
+.book--4 {
+  transform: translateX(-5%) rotate(-2deg);
+}
+
+.Section2-Img:hover > .book:nth-child(1) {
+  transform: translate(30%, 10%) rotate(15deg);
+}
+
+.Section2-Img:hover > .book:nth-child(2) {
+  transform: translate(5%, 5%) rotate(5deg);
+}
+
+.Section2-Img:hover > .book:nth-child(3) {
+  transform: translate(-30%, 5%) rotate(-5deg);
+}
+
+.Section2-Img:hover > .book:nth-child(4) {
+  transform: translate(-50%, 10%) rotate(-15deg);
+}
+
+.Section2-Img:hover > .underlay {
+  transform: translate(17%, 90%) scale(4);
+}
+
+@media only screen and (max-width: 1280px) {
+  .Section2-Text {
+    top: 12.5%;
+    left: 14%;
+  }
+
+  .Section2-Text > p {
+    line-height: 27px;
+  }
+
+  .Section2-Img {
+    display: inline-block;
+    position: relative;
+    width: 25%;
+    height: 62%;
+    left: 33%;
+    top: 9%;
+  }
+
+  .Section2-Img > img {
+    width: 210px;
+  }
+
+  .underlay {
+    height: 130px;
+    width: 130px;
+  }
+}
+
+/* ------------- Books Page --------------- */
+
+.bookBody {
+  background: linear-gradient(120deg, #efefef, #f3f3f3);
+}
+
+.booksUnderlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 80vh;
+  width: 100vw;
+  background: linear-gradient(145deg, #1e3eb5, rgba(63, 136, 167, 0.85));
+  opacity: 0.6;
+  z-index: -3;
+  transition: opacity 1.2s;
+}
+
+.bookSection {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.bookSectionContainer {
+  position: absolute;
+  transition: transform 0.8s;
+}
+
+.bookSC--1 {
+  transform: translateY(25%);
+}
+
+.bookSC--2 {
+  transform: translateX(100%);
+}
+
+.bookTitle,
+.bookDescription {
+  text-align: center;
+}
+
+.bookTitle {
+  margin-top: 35px;
+  font-size: 6vmin;
+}
+
+.titleColor {
+  color: white;
+}
+
+.bookDescription {
+  margin-top: 25px;
+  font-size: 1.2rem;
+}
+
+.bookInfo--Container {
+  display: flex;
+  justify-content: center;
+  margin: 35px 0 35px 0;
+}
+
+.bookPageImage {
+  width: 25%;
+  position: relative;
+  border-radius: 20px;
+}
+
+.bookInformation {
+  position: relative;
+  background-color: white;
+  margin-left: 15px;
+  padding: 80px;
+  width: 40%;
+  border: 1px solid #cbcbcb;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 10px 10px 50px rgba(63, 136, 167, 0.3);
+}
+
+.line {
+  position: absolute;
+  height: 440px;
+  width: 3.5px;
+  background-color: #e7e7e7;
+  border-radius: 5px;
+}
+
+.dot {
+  position: absolute;
+  left: 13.125%;
+  height: 14px;
+  margin-top: 8px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #c2c2c2;
+  display: inline-block;
+  box-shadow: 0px 0px 0px 3px white;
+}
+
+.infoHeading {
+  font-size: 3vmin;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.leftButton,
+.rightButton {
+  position: absolute;
+  top: 65%;
+  z-index: 1;
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.leftButton {
+  left: 6%;
+}
+
+.rightButton {
+  right: 6%;
+}
+
+.leftButton:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.rightButton:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.infoHeading,
+.Author,
+.Quote,
+.Synopsis {
+  margin-left: 45px;
+}
+
+.Author,
+.Quote {
+  margin-bottom: 12px;
+  font-weight: 100;
+}
+
+.Synopsis {
+  font-weight: 100;
+}
+
+@media only screen and (max-width: 1280px) {
+  .bookSection {
+    height: 116vh;
+  }
+
+  .dot {
+    left: 14.625%;
+  }
+}
+
+/* ------------ Footer -------------- */
+
+footer {
+  background: #f8f9fa;
+  padding: 50px;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footerContent > ul {
+  margin-right: -35px;
+}
+
+.footerContent > ul > li {
+  list-style-type: none;
+  display: inline;
+  padding: 0px 10px;
+}
+
+.footerContent > p {
+  color: rgb(77, 77, 77);
+  font-weight: 100;
+  text-align: center;
+  margin-left: -35px;
+}
+
+.footerContent > p > span {
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 1280px) {
+  footer {
+    padding: 40px;
+  }
+}
+
+/* ---------- All Icon Styles ----------- */
+
+i {
+  transition: transform 0.3s;
+}
+
+i:hover {
+  transform: scale(1.05);
+}
+
+/* ------------- Mouse Cursor Circles ------------- */
+
+.circle {
+  position: fixed;
+  height: 20px;
+  width: 20px;
+  border-radius: 24px;
+  background-color: black;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  pointer-events: none;
+}
